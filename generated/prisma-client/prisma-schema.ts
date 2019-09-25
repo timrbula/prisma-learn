@@ -52,9 +52,9 @@ type Subscription {
 type User {
   id: ID!
   name: String!
-  email: String
-  gender: String
-  age: Int
+  email: String!
+  gender: String!
+  age: Int!
 }
 
 type UserConnection {
@@ -66,9 +66,9 @@ type UserConnection {
 input UserCreateInput {
   id: ID
   name: String!
-  email: String
-  gender: String
-  age: Int
+  email: String!
+  gender: String!
+  age: Int!
 }
 
 type UserEdge {
@@ -92,9 +92,9 @@ enum UserOrderByInput {
 type UserPreviousValues {
   id: ID!
   name: String!
-  email: String
-  gender: String
-  age: Int
+  email: String!
+  gender: String!
+  age: Int!
 }
 
 type UserSubscriptionPayload {
@@ -197,5 +197,6 @@ input UserWhereInput {
 
 input UserWhereUniqueInput {
   id: ID
+  email: String
 }
 `

@@ -118,9 +118,9 @@ export type MutationType = "CREATED" | "UPDATED" | "DELETED";
 export interface UserCreateInput {
   id?: Maybe<ID_Input>;
   name: String;
-  email?: Maybe<String>;
-  gender?: Maybe<String>;
-  age?: Maybe<Int>;
+  email: String;
+  gender: String;
+  age: Int;
 }
 
 export interface UserUpdateInput {
@@ -216,6 +216,7 @@ export interface UserSubscriptionWhereInput {
 
 export type UserWhereUniqueInput = AtLeastOne<{
   id: Maybe<ID_Input>;
+  email?: Maybe<String>;
 }>;
 
 export interface NodeNode {
@@ -257,9 +258,9 @@ export interface BatchPayloadSubscription
 export interface UserPreviousValues {
   id: ID_Output;
   name: String;
-  email?: String;
-  gender?: String;
-  age?: Int;
+  email: String;
+  gender: String;
+  age: Int;
 }
 
 export interface UserPreviousValuesPromise
@@ -327,9 +328,9 @@ export interface UserSubscriptionPayloadSubscription
 export interface User {
   id: ID_Output;
   name: String;
-  email?: String;
-  gender?: String;
-  age?: Int;
+  email: String;
+  gender: String;
+  age: Int;
 }
 
 export interface UserPromise extends Promise<User>, Fragmentable {
