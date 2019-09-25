@@ -1,0 +1,31 @@
+fragment userData on User {
+  id
+  name
+  email
+  age
+  gender
+}
+
+query {
+  users {
+   ...userData
+  }
+}
+
+mutation {
+  createUser(
+    email: "timr@gmail.com",
+    name: "Tim",
+    age: 27,
+    gender: "male"
+  ) {
+   ...userData
+  }
+}
+
+mutation {
+  updateUser(email: "timr@gmail.com", name: "Tim", age: 26, gender: "male") {
+    ...userData
+  }
+}
+
