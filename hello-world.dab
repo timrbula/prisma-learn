@@ -1,0 +1,20 @@
+{
+  "Services": {
+    "prisma": {
+      "Env": [
+        "PRISMA_CONFIG=port: 4466\n# uncomment the next line and provide the env var PRISMA_MANAGEMENT_API_SECRET=my-secret to activate cluster security\n# managementApiSecret: my-secret\ndatabases:\n  default:\n    connector: mongo\n    database: xup\n    uri: >-\n      mongodb+srv://admin:tPDw4NHhWpWkTTEt@cluster0-vugjs.mongodb.net/test?retryWrites=true&w=majority\n"
+      ],
+      "Image": "prismagraphql/prisma@sha256:d9fa4d8fcfb4bed75b572bbf9b436a3a7be30b48a24051cc7edec38b7d0c6a15",
+      "Networks": [
+        "default"
+      ],
+      "Ports": [
+        {
+          "Port": 4466,
+          "Protocol": "tcp"
+        }
+      ]
+    }
+  },
+  "Version": "0.1"
+}
