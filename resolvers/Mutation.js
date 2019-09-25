@@ -7,6 +7,11 @@ async function createUser(parent, args, context, info) {
   //const token = jwt.sign({ userId: user.id }, utils.APP_SECRET);
 }
 
+async function updateUser(parent, args, context, info) {
+  const user = await context.prisma.updateUser({ where: { email: args.email }, data: args });
+  return user;
+}
+
 async function deleteUser(parent, args, context, info) {
   const user = await context.prisma.deleteUser({ email: args.email });
   return user;
@@ -14,5 +19,6 @@ async function deleteUser(parent, args, context, info) {
 
 module.exports = {
   createUser,
+  updateUser,
   deleteUser
 };
